@@ -250,19 +250,16 @@ public class TextLineFile implements ITextLineFile {
         } else {
             try {
                 if(param!= null) {
-                    moveto = lm.getLineNum() + parseInt(param);
+                    int temp = lm.getLineNum() + parseInt(param);
+                    moveto =  temp > totalSize ? totalSize : temp;
                 } else {
                     moveto = totalSize;
                 }
                 String moveLine = this.contentBuffer.get(lm.getLineNum()-1);
                 this.contentBuffer.remove(lm.getLineNum()-1);
-                if (moveto > totalSize) {
-                        this.contentBuffer.add(moveLine);
-                        this.currentLineNum = this.contentBuffer.size();
-                    } else {
-                        this.contentBuffer.add(moveto - 1, moveLine);
-                    this.currentLineNum = moveto;
-                    }
+                this.contentBuffer.add(moveto - 1, moveLine);
+                this.currentLineNum = moveto - 1;
+                printMultiLines(lm.getLineNum(), moveto);
                 } catch (Exception ex) {
                 System.out.println("Invalid parameter value: " + param);
             }
