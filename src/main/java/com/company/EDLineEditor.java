@@ -3,10 +3,13 @@ package com.company;
 import com.company.command.ICommand;
 import com.company.command.factory.ICommandFactory;
 import com.company.command.factory.impl.CommandFactory;
+import org.apache.log4j.Logger;
 
 import java.util.Scanner;
 
 public class EDLineEditor {
+
+    final static Logger logger = Logger.getLogger(EDLineEditor.class);
 
     public void action () {
         ICommandFactory cmdFactory = CommandFactory.newInstance();
@@ -14,6 +17,7 @@ public class EDLineEditor {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             String inputStr = scanner.nextLine();
+            logger.debug("Your input: "+inputStr);
             //System.out.println("Your input: "+inputStr);
 
             if (inputStr.toLowerCase().equals("exit")) {

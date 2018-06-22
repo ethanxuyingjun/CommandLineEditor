@@ -1,6 +1,7 @@
 package com.company.command.model;
 
 import com.company.common.enumeration.CommandActionEnum;
+import org.apache.log4j.Logger;
 
 import java.util.Objects;
 import java.util.Set;
@@ -8,6 +9,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CommandModel {
+
+    final static Logger logger = Logger.getLogger(CommandModel.class);
 
     public String getTextContent() {
         return textContent;
@@ -127,7 +130,8 @@ public class CommandModel {
                 setParam(cmdLine.substring(index + 1));
             }
         }
-        System.out.println(toString());
+        //System.out.println(toString());
+        logger.debug("Command Model: "+toString());
     }
 
     @Override
