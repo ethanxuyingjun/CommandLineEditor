@@ -3,9 +3,9 @@ package com.company;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Test {
+public class EDLineEditorTest {
     public static void main(String[] args) {
-        Test t = new Test();
+        EDLineEditorTest t = new EDLineEditorTest();
         //t.test1();
         //t.test2();
         t.test3();
