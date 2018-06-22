@@ -1,7 +1,5 @@
 package com.company.common.enumeration;
 
-import static java.lang.Integer.parseInt;
-
 public enum AddressTypeEnum {
     CURRENT_LINE("."), LAST_LINE("$"), LINE_NUMBER("n"), BACKWARD_LINE("+"), FORWARD_LINE("-"), FROM_TO("m,n"), ALL_LINES(","), TOLAST(";"),
     FORWARD_SEARCH("?"), BACKWARD_SEARCH("/"), FLAG_LINE("'");

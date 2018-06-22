@@ -4,8 +4,6 @@ import com.company.common.enumeration.AddressTypeEnum;
 
 import java.util.Objects;
 
-import static java.lang.Integer.parseInt;
-
 public class CommandAddressModel {
 
     //必选参数
